@@ -11,26 +11,21 @@
 # **************************************************************************** #
 
 NAME = libft.a
-FUNCTIONS = ft_bzero \
-			ft_memccpy \
-			ft_memchr \
-			ft_memcmp \
-			ft_memcpy \
-			ft_memmove \
-			ft_memset 
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
 
-OBJ = $(patsubst %,%.o,$(FUNCTIONS))
-SRC = $(patsubst %,%.c,$(FUNCTIONS))
 CFLAGS = -Wall -Wextra -Werror
+INCLUDES = -I ./includes
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
-	@true
 
-$(NAME):
-	gcc -I ./includes $(CFLAGS) -c $(SRC)
-	ar rcs $(NAME) $(OBJ)
+$(NAME): $(OBJ)
+	ar rcs $@ $^
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)

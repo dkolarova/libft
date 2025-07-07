@@ -3,19 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dkolarov <dkolarov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diana <diana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 13:59:23 by dkolarov          #+#    #+#             */
-/*   Updated: 2025/05/28 17:43:48 by dkolarov         ###   ########.fr       */
+/*   Updated: 2025/07/07 14:49:17 by diana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 # include <stdlib.h>
 # include <unistd.h>
 # include <stddef.h>
+# include <fcntl.h>
+# include <stdio.h>
+# include <limits.h>
+# include <stdint.h>
+# include <stdarg.h>
+# define HEX_UPPER_BASE "0123456789ABCDEF"
+# define HEX_LOWER_BASE "0123456789abcdef"
 
 typedef struct s_list
 {
@@ -82,4 +92,18 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
+//get next line
+char	*get_next_line(int fd);
+
+//printf
+int     ft_printf(char const *str, ...);
+
+void	ft_putchar(char c, size_t *counter);
+void	ft_putnbr(int num, size_t *counter);
+void	ft_putstr(char *str, size_t *counter);
+void	ft_putptr(void *ptr, size_t *counter);
+void	ft_putint(int num, size_t *counter);
+void	ft_puthex(unsigned int num, size_t *counter, char *base);
+
+char	*ft_extra(unsigned long long n, char *base);
 #endif

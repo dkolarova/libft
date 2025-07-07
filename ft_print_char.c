@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dkolarov <dkolarov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diana <diana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 19:20:23 by dkolarov          #+#    #+#             */
-/*   Updated: 2025/05/27 17:44:13 by dkolarov         ###   ########.fr       */
+/*   Created: 2025/05/30 20:18:07 by diana             #+#    #+#             */
+/*   Updated: 2025/07/07 14:46:55 by diana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
+#include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putchar(char c, size_t *counter)
 {
-	write(fd, &c, 1);
+	write(1, &c, 1);
+	(*counter)++;
 }

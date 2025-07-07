@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dkolarov <dkolarov@student.42.fr>          +#+  +:+       +#+         #
+#    By: diana <diana@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/22 14:01:29 by dkolarov          #+#    #+#              #
-#    Updated: 2025/05/29 16:41:16 by dkolarov         ###   ########.fr        #
+#    Updated: 2025/07/07 14:43:19 by diana            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,17 @@ ALL_SRC = 	ft_bzero.c \
 		ft_lstlast_bonus.c \
 		ft_lstmap_bonus.c \
 		ft_lstnew_bonus.c \
-		ft_lstsize_bonus.c
+		ft_lstsize_bonus.c \
+		get_next_line.c \
+		ft_extra.c \
+        ft_print_char.c \
+        ft_print_hex.c \
+        ft_print_int.c \
+        ft_print_nbr.c \
+        ft_print_ptr.c \
+        ft_print_str.c \
+        ft_printf.c
+
 		
 SRC        = $(filter-out %_bonus.c, $(ALL_SRC))
 BONUS_SRC  = $(filter %_bonus.c, $(ALL_SRC))
